@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<name>jiaxin_gw_bear</name>
+	<webport>12301</webport>
+	<author>zyj</author>
+	<version>1.0</version>
+	<date>2016-04-06</date>
+	<disableWebConf>true</disableWebConf>
+	<configuration>
+		<!-- <item key="REDIS_ADDRESS" value="172.16.70.180:26379,172.16.70.181:26379" display="Redis服务的地址" description="Redis服务的地址" /> -->
+	</configuration>
+	<!-- <datasource>
+		<name>DS_TEMP</name>
+		<username>root</username>
+		<password>root</password>
+		<driver>com.mysql.jdbc.Driver</driver>
+		<jdbcurl>jdbc:mysql://172.16.71.193:3306/imserver?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false</jdbcurl>
+	</datasource> -->
+</config>

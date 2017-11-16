@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="jiaxin_gw_bear" default="build" basedir=".">
+
+	<property name="src" value="${basedir}/src" />
+	<property name="test" value="${basedir}/test" />
+	<property name="build" value="${basedir}/build" />
+	<property name="build.classes" value="${build}/classes" />
+	<property name="target" value="${basedir}/target" />
+
+	<property name="product.name" value="${ant.project.name}" />
+	<property name="product.dir" value="${target}/${product.name}" />
+
+	<property name="lib.core" value="jiaxin_lib_core" />
+	<property name="lib.core.dir" value="../${lib.core}" />
+	<property name="lib.core.jar" value="${lib.core}.jar" />
+
+	<property name="lib.dubbox" value="jiaxin_lib_dubbox" />
+	<property name="lib.dubbox.dir" value="../${lib.dubbox}" />
+	<property name="lib.dubbox.jar" value="${lib.dubbox}.jar" />
+
+	<property name="xengine.home" value="../jiaxin_gw_container/target/jiaxin_gw_container-1.0" />
+
+	<tstamp>
+		<format property="build.date" pattern="yyyy-MM-dd HH:mm:ss" />
+	</tstamp>
+
+	<path id="classpath.basic">
+		<fileset dir="${xengine.home}/lib" includes="*.jar" />
+		<fileset dir="${xengine.home}/lib/3rdparty" includes="*.jar" />
+	</path>
+
+	<path id="classpath.runtime">
+		<fileset dir="${product.dir}/WEB-INF/lib" includes="*.jar" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${target}" />
+		<mkdir dir="${product.dir}" />
+	</target>
+
+	<target name="build" depends="init">
+		<delete dir="${target}" />
+		<delete file="${product.name}.zip" />
+
+		<copy todir="${product.dir}">
+			<fileset dir="${basedir}/WebRoot">
+				<include name="**/**" />
+				<exclude name="WEB-INF/classes/**" />
+			</fileset>
+		</copy>
+
+		<ant antfile="build.xml" target="build" dir="${lib.dubbox.dir}" />
+		<copy todir="${product.dir}/WEB-INF/lib">
+			<fileset dir="${lib.core.dir}">
+				<include name="${lib.core.jar}" />
+			</fileset>
+			<fileset dir="${lib.dubbox.dir}">
+				<include name="${lib.dubbox.jar}" />
+			</fileset>
+		</copy>
+
+		<javac debug="true" encoding="UTF-8" srcdir="${src}" destdir="${build.classes}" deprecation="off" nowarn="on" includeantruntime="on" includes="**/**">
+			<classpath refid="classpath.basic" />
+			<classpath refid="classpath.runtime" />
+		</javac>
+
+		<copy todir="${build.classes}">
+			<fileset dir="${src}">
+				<include name="resources/**" />
+			</fileset>
+		</copy>
+
+		<jar destfile="${product.dir}/WEB-INF/lib/${product.name}.jar">
+			<fileset dir="${build.classes}">
+				<include name="**/**" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-Date" value="${build.date}" />
+			</manifest>
+		</jar>
+
+		<zip destfile="${basedir}/${product.name}.zip">
+			<fileset dir="${target}">
+				<include name="**/**" />
+			</fileset>
+		</zip>
+		<delete dir="${build}" />
+	</target>
+
+</project>

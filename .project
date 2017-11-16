@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<projectDescription>
+	<name>jiaxin_gw_bear</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>com.genuitec.eclipse.j2eedt.core.webnature</nature>
+	</natures>
+</projectDescription>

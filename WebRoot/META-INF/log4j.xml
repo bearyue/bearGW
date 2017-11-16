@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="30">
+	<Appenders>
+		<!-- for 3rdparty -->
+		<RollingFile name="3rdparty"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_3rdparty.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_3rdparty_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for jiaxin_dubbo -->
+		<RollingFile name="jiaxin_dubbo"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_dubbo.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_dubbo_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for jiaxin_zookeeper -->
+		<RollingFile name="jiaxin_zookeeper"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_zookeeper.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_zookeeper_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for jiaxin_kafka -->
+		<RollingFile name="jiaxin_kafka"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_kafka.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_kafka_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for jiaxin_app -->
+		<RollingFile name="jiaxin_app" fileName="${sys:GW_HOME}/log/${sys:APP_NAME}.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for com.jiaxincloud.gw.container -->
+		<RollingFile name="jiaxin_container"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_container.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_container_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for com.jiaxincloud.gw.hazelcast -->
+		<RollingFile name="jiaxin_hazelcast"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_hazelcast.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_hazelcast_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for com.jiaxincloud.gw.redis -->
+		<RollingFile name="jiaxin_redis"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_redis.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_redis_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<!-- for com.jiaxincloud.gw.sql -->
+		<RollingFile name="jiaxin_sql"
+			fileName="${sys:GW_HOME}/log/${sys:APP_NAME}_sql.log"
+			filePattern="${sys:GW_HOME}/log/${sys:APP_NAME}_sql_%i.log.gz"
+			bufferedIO="true" bufferSize="8192">
+			<PatternLayout>
+				<Pattern>[%d{MM-dd HH:mm:ss,SSS}] [%-5p] [%t] [%c] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" fileIndex="min"/>
+		</RollingFile>
+
+		<Async name="async_3rdparty">
+			<AppenderRef ref="3rdparty" />
+		</Async>
+		
+		
+		<!--         APP EXTEND           -->
+
+
+		<!--         APP EXTEND           -->
+	</Appenders>
+	<Loggers>
+		<!-- OF-506: Jetty INFO messages are generally not useful. Ignore them 
+			by default. -->
+		<Logger name="org.eclipse.jetty" level="warn" />
+		<Logger name="kafka" level="warn" />
+		<Logger name="org.apache.zookeeper" level="warn" />
+		<Logger name="com.hazelcast" level="info" />
+		<Logger name="org.atmosphere" level="warn" />
+		<Logger name="com.alibaba.dubbo.remoting" level="off" />
+		<Logger name="com.alibaba.dubbo.monitor" level="off" />
+
+		<!-- for jiaxin_gw_container -->
+		<Logger name="com.jiaxincloud.gw.lib.container" level="debug"
+			additivity="false">
+			<AppenderRef ref="jiaxin_container" />
+		</Logger>
+
+		<!-- for container hazelcast -->
+		<!-- <Logger name="com.jiaxincloud.gw.lib.hazelcast" level="debug"
+			additivity="false">
+			<AppenderRef ref="jiaxin_hazelcast" />
+		</Logger> -->
+
+		<!-- for container redis -->
+		<!-- <Logger name="com.jiaxincloud.gw.lib.redis" level="debug"
+			additivity="false">
+			<AppenderRef ref="jiaxin_redis" />
+		</Logger> -->
+
+		<!-- for container sql -->
+		<Logger name="com.jiaxincloud.gw.lib.sql" level="debug" additivity="false">
+			<AppenderRef ref="jiaxin_sql" />
+		</Logger>
+
+		<!-- dubbo -->
+		<!-- <Logger name="com.jiaxincloud.gw.lib.dubbo" level="debug" additivity="false">
+			<AppenderRef ref="jiaxin_dubbo" />
+		</Logger> -->
+
+		<!-- zookepper -->
+		<!-- <Logger name="com.jiaxincloud.gw.lib.zookeeper" level="debug"
+			additivity="false">
+			<AppenderRef ref="jiaxin_zookeeper" />
+		</Logger> -->
+
+		<!-- kafka -->
+		<!-- <Logger name="com.jiaxincloud.gw.lib.kafka" level="debug" additivity="false">
+			<AppenderRef ref="jiaxin_kafka" />
+		</Logger> -->
+
+
+		<!-- APP -->
+		<Logger name="com.jiaxincloud.gw.bear" level="debug"
+			additivity="false">
+			<AppenderRef ref="jiaxin_app" />
+		</Logger>
+
+		<!-- Root -->
+		<Root level="warn">
+			<AppenderRef ref="async_3rdparty" />
+		</Root>
+	</Loggers>
+</Configuration>
+
