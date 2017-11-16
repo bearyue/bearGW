@@ -11,7 +11,7 @@ import com.jiaxincloud.gw.lib.utils.thread.JXExecutorUtil;
 public class AccessThread {
 
     private static ExecutorService threadPool =
-            JXExecutorUtil.newFixedThreadPool("CALLCENTER_DELIVERY", 10);
+            JXExecutorUtil.newFixedThreadPool("BEAR_POOL", 10);
 
     /**
      * 执行线程
